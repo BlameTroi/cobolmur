@@ -1,0 +1,58 @@
+HOW TO USE LISTMODS TO GENERATE A STRUCTURE LISTING
+FROM A COBOL SOURCE PROGRAM
+=================================================================
+
+LISTMODS is designed to generate a structure listing from the 
+COBOL source code for a program...as long as the program adheres 
+to the structured programming standards presented in our book. 
+LISTMODS is used in exercise 4-4 to generate a structure listing 
+for a program that prepares a summary report. When you do that 
+exercise, you'll see the structure listing and summary page that 
+LISTMODS prepares.
+
+A structure listing shows the structure of the procedures that 
+are used in the program. This structure includes any subprograms 
+that are called by the procedures in the program. If a procedure 
+is performed by two or more procedures, a C is printed after its 
+name to shown that it's a common module. Then, you can use the 
+structure listing as part of the documentation for the program.
+
+After the structure listing, LISTMODS prints a summary page. This 
+page lists error messages, uncalled procedures, called 
+subprograms, and Declaratives (if you've used any). It also 
+prints some program statistics.
+
+Before you compile and run LISTMODS, you need to change the 
+system name for the input file so it points to the source file 
+that contains the COBOL program that you want the structure 
+listing for. Then, when you run LISTMODS, it reads the source 
+program as a sequential data file and prepares the structure 
+listing.
+
+LISTMODS itself is a COBOL program that we wrote back in the 
+early 1980's. Since it is written in 1974 standard code, it can 
+easily be modified to work on any system. Usually, you just need 
+to adjust the Select and FD statements so they are appropriate 
+for your system.
+
+It's also easy to make some basic modifications to LISTMODS. If, 
+for example, you use sections in a program instead of paragraphs 
+as the basic structural modules, you can change LISTMODS so it 
+processes sections instead of paragraphs. To do that, you just 
+change the switch value for PARAGRAPH-MODULES-SW to "N". Or, if 
+you don't want asterisks (*) to print in the structure listings, 
+you can delete the source lines that have AST in columns 73-75.
+
+Once you've got LISTMODS working, you can use it to create a 
+structure listing for its own source code. Then, the complete 
+documentation for LISTMODS consists of its structure listing and 
+its source code.
+
+Since the code for LISTMODS adheres to all the standards 
+presented in our book, you should be able to read and understand 
+its code without too much trouble...once you've completed our 
+book. Although LISTMODS is certainly not a typical business 
+program, it's interesting to see how this program is designed 
+and coded. Once you understand it, you should be able to modify 
+or enhance its code as you see fit.
+
